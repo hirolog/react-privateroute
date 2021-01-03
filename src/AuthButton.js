@@ -5,7 +5,6 @@ import { useAuth } from "./ProvideAuth";
 function AuthButton() {
   let history = useHistory();
   let auth = useAuth();
-
   return auth.user ? (
     <p>
       Welcome!{" "}

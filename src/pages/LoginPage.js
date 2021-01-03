@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useAuth } from "./ProvideAuth";
+import { useAuth } from "../ProvideAuth";
 
 function LoginPage() {
   let history = useHistory();

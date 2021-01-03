@@ -1,17 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ProvideAuth from "./ProvideAuth";
 import AuthButton from "./AuthButton";
-import PublicPage from "./PublicPage";
-import ProtectedPage from "./ProtectedPage";
 import PrivateRoute from "./PrivateRoute";
-import LoginPage from "./LoginPage";
+import ProvideAuth from "./ProvideAuth";
+import LoginPage from "./pages/LoginPage";
+import MyPage from "./pages/Mypage";
+import PublicPage from "./pages/PublicPage";
+import ProtectedPage from "./pages/ProtectedPage";
 
 function App() {
   return (
     <ProvideAuth>
       <Router>
         <div>
+          <Link to="/">Top</Link>
           <AuthButton />
 
           <ul>
@@ -20,6 +22,9 @@ function App() {
             </li>
             <li>
               <Link to="/protected">Protected Page</Link>
+            </li>
+            <li>
+              <Link to="/mypage">Mypage Page</Link>
             </li>
           </ul>
 
@@ -30,6 +35,9 @@ function App() {
             <Route path="/login">
               <LoginPage />
             </Route>
+            <PrivateRoute path="/mypage">
+              <MyPage />
+            </PrivateRoute>
             <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute>
